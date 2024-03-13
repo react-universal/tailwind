@@ -1,9 +1,11 @@
-import { toColorValue, type CompleteStyle } from '@universal-labs/css';
-import { parsedRuleToClassName } from '../convert/ruleToClassName';
+import {
+  parsedRuleToClassName,
+  type CompleteStyle,
+  type SheetEntryDeclaration,
+} from '@universal-labs/css';
+import { asArray, toColorValue } from '@universal-labs/helpers';
 import type { Rule, RuleMeta, RuleResolver } from '../types/config.types';
-import type { SheetEntryDeclaration } from '../types/css.types';
 import type { __Theme__ } from '../types/theme.types';
-import { asArray } from '../utils/helpers';
 
 export function matchCssObject(
   pattern: string,

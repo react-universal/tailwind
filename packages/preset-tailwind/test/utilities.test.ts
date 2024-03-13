@@ -1,4 +1,5 @@
-import { createTailwind, createVirtualSheet } from '@universal-labs/native-twin';
+import { createVirtualSheet } from '@universal-labs/css';
+import { createTailwind } from '@universal-labs/native-twin';
 import { presetTailwind } from '../src';
 
 const tailwind = createTailwind(
@@ -40,6 +41,15 @@ describe('@universal-labs/preset-tailwind - Spacing Utilities', () => {
           { prop: 'paddingLeft', value: '0.5rem' },
           { prop: 'paddingRight', value: '0.5rem' },
         ],
+        important: false,
+        precedence: 805306368,
+        selectors: [],
+      },
+    ]);
+    expect(tailwind('absolute')).toStrictEqual([
+      {
+        className: 'absolute',
+        declarations: [{ prop: 'position', value: 'absolute' }],
         important: false,
         precedence: 805306368,
         selectors: [],

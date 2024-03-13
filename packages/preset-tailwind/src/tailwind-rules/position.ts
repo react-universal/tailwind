@@ -1,7 +1,8 @@
 import { matchThemeValue } from '@universal-labs/native-twin';
 import type { Rule } from '@universal-labs/native-twin';
+import { TailwindPresetTheme } from '../types/theme.types';
 
-export const positionRules: Rule[] = [
+export const positionRules: Rule<TailwindPresetTheme>[] = [
   matchThemeValue('top-', 'spacing', 'top', {
     canBeNegative: true,
   }),
@@ -14,7 +15,8 @@ export const positionRules: Rule[] = [
   matchThemeValue('right-', 'spacing', 'right', {
     canBeNegative: true,
   }),
-  matchThemeValue('absolute|relative', 'position', 'position'),
+  matchThemeValue('absolute', 'position', 'position'),
+  matchThemeValue('relative', 'position', 'position'),
   matchThemeValue('z-', 'zIndex', 'zIndex', {
     canBeNegative: true,
   }),

@@ -9,13 +9,13 @@
     "react-native-web",
     "universal-apps"
   ],
-  "homepage": "https://github.com/react-universal/tailwind#readme",
+  "homepage": "https://github.com/react-universal/native-twin#readme",
   "bugs": {
-    "url": "https://github.com/react-universal/tailwind/issues"
+    "url": "https://github.com/react-universal/native-twin/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/react-universal/tailwind",
+    "url": "https://github.com/react-universal/native-twin",
     "directory": "packages/styled"
   },
   "license": "MIT",
@@ -41,12 +41,13 @@
   },
   "dependencies": {
     "@universal-labs/css": "workspace:*",
+    "@universal-labs/helpers": "workspace:*",
     "@universal-labs/native-twin": "workspace:*",
     "react-is": "^18.2.0",
     "stable-hash": "0.0.3"
   },
   "devDependencies": {
-    "@types/react": "18.2.14",
+    "@types/react": "^18.2.64",
     "@types/react-dom": "18.0.10",
     "@types/react-is": "^17.0.3"
   },
@@ -54,6 +55,9 @@
     "react": ">=18",
     "react-native": ">= 0.70",
     "react-native-web": ">= 0.18.10"
+  },
+  "optionalDependencies": {
+    "jest": "*"
   },
   "publishConfig": {
     "access": "public",
