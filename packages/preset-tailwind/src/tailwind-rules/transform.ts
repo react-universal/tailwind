@@ -1,8 +1,8 @@
-import { matchThemeValue } from '@universal-labs/native-twin';
-import type { Rule } from '@universal-labs/native-twin';
-import type { __Theme__ } from '@universal-labs/native-twin';
+import { matchThemeValue } from '@native-twin/native-twin';
+import type { Rule } from '@native-twin/native-twin';
+import { TailwindPresetTheme } from '../types/theme.types';
 
-export const translateRules: Rule<__Theme__>[] = [
+export const translateRules: Rule<TailwindPresetTheme>[] = [
   matchThemeValue('translate-', 'translate', 'transform', {
     feature: 'transform-2d',
     prefix: 'translate',

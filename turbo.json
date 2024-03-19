@@ -2,6 +2,7 @@
   "$schema": "https://turbo.build/schema.json",
   "pipeline": {
     "build": {
+      "dependsOn": ["^build"],
       "cache": false
     },
     "build:watch": {
@@ -11,8 +12,19 @@
     "test": {
       "dependsOn": ["^build"]
     },
+    "clean": {
+      "cache": false
+    },
+    "lint": {
+      "cache": true
+    },
     "test:watch": {
       "cache": false
+    },
+    "test:debug": {
+      "cache": false,
+      "dependsOn": ["build"],
+      "persistent": true
     },
     "dev": {
       "cache": false,

@@ -1,4 +1,5 @@
-import { createTailwind, createVirtualSheet } from '@universal-labs/native-twin';
+import { createVirtualSheet } from '@native-twin/css';
+import { createTailwind } from '@native-twin/native-twin';
 import { presetTailwind } from '../src';
 
 const tailwind = createTailwind(
@@ -17,7 +18,7 @@ const tailwind = createTailwind(
   createVirtualSheet(),
 );
 
-describe('@universal-labs/preset-tailwind - Spacing Utilities', () => {
+describe('@native-twin/preset-tailwind - Spacing Utilities', () => {
   it('paddings', () => {
     expect(tailwind('p-2')).toStrictEqual([
       {
@@ -40,6 +41,15 @@ describe('@universal-labs/preset-tailwind - Spacing Utilities', () => {
           { prop: 'paddingLeft', value: '0.5rem' },
           { prop: 'paddingRight', value: '0.5rem' },
         ],
+        important: false,
+        precedence: 805306368,
+        selectors: [],
+      },
+    ]);
+    expect(tailwind('absolute')).toStrictEqual([
+      {
+        className: 'absolute',
+        declarations: [{ prop: 'position', value: 'absolute' }],
         important: false,
         precedence: 805306368,
         selectors: [],
@@ -154,7 +164,7 @@ describe('@universal-labs/preset-tailwind - Spacing Utilities', () => {
   });
 });
 
-describe('@universal-labs/native-twin - Color Utilities', () => {
+describe('@native-twin/native-twin - Color Utilities', () => {
   it('Basic color', () => {
     expect(tailwind('bg-black')).toStrictEqual([
       {
@@ -221,7 +231,7 @@ describe('@universal-labs/native-twin - Color Utilities', () => {
   });
 });
 
-describe('@universal-labs/preset-tailwind - Position Utilities', () => {
+describe('@native-twin/preset-tailwind - Position Utilities', () => {
   it('top|right|bottom|left', () => {
     expect(tailwind('top-2')).toStrictEqual([
       {
@@ -240,7 +250,7 @@ describe('@universal-labs/preset-tailwind - Position Utilities', () => {
   });
 });
 
-describe('@universal-labs/preset-tailwind - Border Utilities', () => {
+describe('@native-twin/preset-tailwind - Border Utilities', () => {
   it('t|r|b|l', () => {
     expect(tailwind('border-x-1')).toStrictEqual([
       {
